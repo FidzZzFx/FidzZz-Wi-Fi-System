@@ -2,11 +2,6 @@
 
 Aplikasi Android native (Kotlin + Jetpack Compose) untuk router lokal `192.168.1.1` (target: ZTE F663NV3A).
 
-## Build APK (GitHub Actions)
-1. Push folder ini ke repo GitHub (branch `main`).
-2. Tab **Actions** > workflow **Build APK** (jalan otomatis saat push, atau Run workflow).
-3. Unduh artifact `FidzZz-WiFi-System-debug` > `app-debug.apk`, lalu instal di HP (izinkan sumber tidak dikenal).
-
 Build lokal: Android Studio (JDK 17), buka folder ini, Run. Atau `gradle assembleDebug`.
 
 ## Pakai
