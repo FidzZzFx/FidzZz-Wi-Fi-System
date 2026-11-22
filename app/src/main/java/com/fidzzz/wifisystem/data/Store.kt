@@ -64,10 +64,10 @@ class AppSettings(ctx: Context) {
         private set
 
     fun setTheme(m: ThemeMode) { themeMode = m; p.edit().putString("theme", m.name).apply() }
-    fun setAnimations(v: Boolean) { animations = v; p.edit().putBoolean("anim", v).apply() }
-    fun setAutoConnect(v: Boolean) { autoConnect = v; p.edit().putBoolean("autoConnect", v).apply() }
+    fun changeAnimations(v: Boolean) { animations = v; p.edit().putBoolean("anim", v).apply() }
+    fun changeAutoConnect(v: Boolean) { autoConnect = v; p.edit().putBoolean("autoConnect", v).apply() }
     fun setTimeout(v: Int) { timeoutSec = v; p.edit().putInt("timeout", v).apply() }
-    fun setRetries(v: Int) { retries = v; p.edit().putInt("retries", v).apply() }
+    fun changeRetries(v: Int) { retries = v; p.edit().putInt("retries", v).apply() }
     fun setRefresh(v: Int) { refreshSec = v; p.edit().putInt("refresh", v).apply() }
 
     fun label(ip: String): String? = p.getString("name_$ip", null)
