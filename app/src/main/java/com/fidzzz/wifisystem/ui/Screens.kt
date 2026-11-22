@@ -259,7 +259,7 @@ fun SettingsScreen(vm: AppViewModel, nav: NavController) {
                 }
             }
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Text("Animasi", Modifier.weight(1f)); Switch(s.animations, { s.setAnimations(it) })
+                Text("Animasi", Modifier.weight(1f)); Switch(s.animations, { s.changeAnimations(it) })
             }
         }
         GlassCard {
@@ -279,7 +279,7 @@ fun SettingsScreen(vm: AppViewModel, nav: NavController) {
             }) { Text(if (saved) "Tersimpan" else "Simpan") }
             Muted("Catatan: akses HTTP hanya diizinkan ke 192.168.1.1. Alamat lain perlu diubah di network_security_config.xml.")
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Text("Auto connect", Modifier.weight(1f)); Switch(s.autoConnect, { s.setAutoConnect(it) })
+                Text("Auto connect", Modifier.weight(1f)); Switch(s.autoConnect, { s.changeAutoConnect(it) })
             }
             Muted("Connection timeout (detik)")
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -287,7 +287,7 @@ fun SettingsScreen(vm: AppViewModel, nav: NavController) {
             }
             Muted("Retry connection")
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf(0, 1, 2, 3).forEach { v -> FilterChip(s.retries == v, { s.setRetries(v) }, { Text("$v") }) }
+                listOf(0, 1, 2, 3).forEach { v -> FilterChip(s.retries == v, { s.changeRetries(v) }, { Text("$v") }) }
             }
             InfoRow("Status", when (gate) { is Gate.Ready -> "Terhubung"; Gate.Checking -> "Memeriksa"; else -> "Tidak terhubung" })
             OutlinedButton(onClick = { vm.check() }) { Text("Periksa ulang koneksi") }
